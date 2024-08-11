@@ -26,10 +26,50 @@ body {
     sans-serif;
 }
 
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font: inherit;
+}
+
 a {
   text-decoration: none;
 }
 
-section {
+li {
+  list-style-type: none;
+}
+
+.w-full {
   width: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+nav {
+  padding: 1rem;
+  color: white;
+  opacity: 65%;
+  background-color: #1f2937;
+}
+
+header > nav > ul > li:not(:first-of-type) {
+  margin-left: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
 }

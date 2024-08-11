@@ -34,14 +34,6 @@
   display: grid;
 }
 
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
 .main {
   margin-bottom: 3rem;
   gap: 1rem;
@@ -123,7 +115,6 @@
 .sep-line {
   height: 1px;
   background-color: black;
-  width: 100%;
 }
 
 .author {
@@ -169,7 +160,7 @@
     margin-bottom: 3rem;
   }
   .read-text {
-    flex-direction: row;
+    flex-direction: row !important;
     align-items: center;
   }
   .main {

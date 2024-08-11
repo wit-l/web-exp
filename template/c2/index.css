@@ -15,8 +15,6 @@
 }
 
 .component {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   align-items: center;
 }
@@ -67,8 +65,6 @@ button {
 }
 
 .style_item {
-  display: flex;
-  flex-direction: column;
   border: 1px solid rgb(209 218 219);
   border-radius: 0.375rem;
   gap: 1rem;
@@ -131,14 +127,6 @@ button {
   .paragraph {
     margin-bottom: 2rem;
   }
-}
-
-.flex-box {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
 }
 
 @media (max-width: 1024px) {

@@ -27,14 +27,6 @@
   display: grid;
 }
 
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
 .container .main img {
   object-fit: cover;
   max-width: 100%;
