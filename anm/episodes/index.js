@@ -36,7 +36,6 @@ async function updatePage(page) {
     for (let i = 1; i <= pageNum; ++i) {
       let classList = ["flex", "page"];
       if (i === page) classList.push("active");
-      console.log(classList);
       pageItemHtml += `<a href="javascript:;" class="${classList.join(" ")}">${i}</a>`;
     }
     pageItemHtml += `<a href="javascript:;" class="flex">&gt;</a>`;
