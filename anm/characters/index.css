@@ -1,3 +1,8 @@
+main section {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .entries {
   gap: 0.5rem;
 }
@@ -71,6 +76,11 @@
 }
 
 @media (min-width: 768px) {
+  main section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   .entries {
     gap: 1.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -88,6 +98,7 @@
   }
   main section {
     max-width: 100%;
-    padding: 1.5rem 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
