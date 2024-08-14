@@ -19,7 +19,22 @@
 
     <main class="w-full">
       <section>
-        <div class="entries grid"></div>
+        <div class="entries grid">
+          <!-- <article class="flex flex-col rounded"> -->
+          <!--   <h6 class="ename w-full"> -->
+          <!--     <p class="gray-text">episode name:</p> -->
+          <!--     <a class="w-full" href="${url}">${name}</a> -->
+          <!--   </h6> -->
+          <!--   <div> -->
+          <!--     <p class="gray-text">Air Date:</p> -->
+          <!--     <p class="air-date">${airDate}</p> -->
+          <!--   </div> -->
+          <!--   <div> -->
+          <!--     <p class="gray-text">Created Date:</p> -->
+          <!--     <p class="created-date">${createdDate.split("T")[0]}</p> -->
+          <!--   </div> -->
+          <!-- </article> -->
+        </div>
         <div class="flex pagination">
           <nav class="flex"></nav>
         </div>
@@ -36,6 +51,6 @@
       defer
       src="https://cdn.jsdelivr.net/npm/axios@latest/dist/axios.min.js"
     ></script>
-    <script defer src="./index.js"></script>
+    <script defer src="./index.js" type="module"></script>
   </body>
 </html>
