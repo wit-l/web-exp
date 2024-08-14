@@ -83,4 +83,8 @@
     gap: 1.5rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  main section {
+    max-width: 100%;
+    padding: 1.5rem 2rem;
+  }
 }
