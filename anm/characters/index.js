@@ -17,42 +17,43 @@ import { updatePaginationOnClick } from "../js/common.js";
       const results = characterRes.data.results.map(async (item) => {
         const { name, image, url, status, location, episode, species } = item;
         return `
-            <article class="flex flex-col rounded">
-              <img
-                src="${image}"
-                alt="${name}'s avatar"
-              />
-              <div class="character_info flex flex-col">
-                <div>
-                  <h6 class="name orange"><a href="${url}" target="_blank">${name}</a></h6>
-                  <p class="status_category flex">
-                    <span class="status rounded ${status === "Alive" ? "bright-green" : status === "Dead" ? "deep-red" : "neutral-gray"}"></span>
-                    <span>${status}</span>
-                    <span>&nbsp;-&nbsp;</span>
-                    <span>${species}</span>
-                  </p>
-                </div>
-                <div class="last_location">
-                  <p class="gray-text medium-font">Last known location:</p>
-                  <p class="orange">
-                    <a class="addr1" href="${location.url}" target="_blank">
-                      ${location.name}
-                    </a>
-                  </p>
-                </div>
-                <div class="first_location">
-                  <p class="gray-text medium-font">First seen in:</p>
-                  <p class="orange">
-                    <a class="addr2" href="${episode[0]}" target="_blank">
-                      ${(await axios.get(episode[0])).data.name}
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </article>`;
+<article class="flex flex-col rounded">
+  <img
+    src="${image}"
+    alt="${name}'s avatar"
+  />
+  <div class="character_info flex flex-col">
+    <div>
+      <h6 class="name orange"><a href="${url}" target="_blank">${name}</a></h6>
+      <p class="status_category flex">
+        <span class="status rounded ${status === "Alive" ? "bright-green" : status === "Dead" ? "deep-red" : "neutral-gray"}"></span>
+        <span>${status}</span>
+        <span>&nbsp;-&nbsp;</span>
+        <span>${species}</span>
+      </p>
+    </div>
+    <div class="last_location">
+      <p class="gray-text medium-font">Last known location:</p>
+      <p class="orange">
+        <a class="addr1" href="${location.url}" target="_blank">
+          ${location.name}
+        </a>
+      </p>
+    </div>
+    <div class="first_location">
+      <p class="gray-text medium-font">First seen in:</p>
+      <p class="orange">
+        <a class="addr2" href="${episode[0]}" target="_blank">
+          ${(await axios.get(episode[0])).data.name}
+        </a>
+      </p>
+    </div>
+  </div>
+</article>`;
       });
       // console.log(results);
       const promiseArr = await Promise.all(results);
+      console.log(typeof promiseArr);
       document.querySelector(".entries").innerHTML = promiseArr.join("");
       // console.log(entriesHtml);
       // 更新页码
