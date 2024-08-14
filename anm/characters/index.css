@@ -60,11 +60,14 @@
   margin-right: 0.5rem;
 }
 
-.last_location > p:nth-of-type(2),
-.first_location > p:nth-of-type(2) {
+.last_location > .addr1,
+.first_location > .addr2 {
   font-size: 1.125rem;
   line-height: 1.625;
   font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 768px) {

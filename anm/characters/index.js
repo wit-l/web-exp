@@ -34,16 +34,16 @@ import { updatePaginationOnClick } from "../js/common.js";
     </div>
     <div class="last_location">
       <p class="gray-text medium-font">Last known location:</p>
-      <p class="orange">
-        <a class="addr1" href="${location.url}" target="_blank">
+      <p class="orange addr1">
+        <a href="${location.url}" target="_blank">
           ${location.name}
         </a>
       </p>
     </div>
     <div class="first_location">
       <p class="gray-text medium-font">First seen in:</p>
-      <p class="orange">
-        <a class="addr2" href="${episode[0]}" target="_blank">
+      <p class="orange addr2">
+        <a href="${episode[0]}" target="_blank">
           ${(await axios.get(episode[0])).data.name}
         </a>
       </p>
