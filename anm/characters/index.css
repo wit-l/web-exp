@@ -22,13 +22,16 @@
   justify-content: space-between;
 }
 
+.ellipsis-1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .character_info .name {
   font-size: 1.6875rem;
   line-height: 1.1;
   font-weight: 800;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .character_info .orange:hover {
@@ -65,9 +68,6 @@
   font-size: 1.125rem;
   line-height: 1.625;
   font-weight: 400;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 @media (min-width: 768px) {
