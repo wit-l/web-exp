@@ -57,7 +57,8 @@ import { updatePaginationOnClick } from "../js/common.js";
       document.querySelector(".entries").innerHTML = promiseArr.join("");
       // console.log(entriesHtml);
       // 更新页码
-      pageNum = characterRes.data.info.pages;
+      //characterRes.data.info.pages;
+      pageNum = 6;
       let pageItemHtml = `<a href="javascript:;" class="flex">&lt;</a>`;
       for (let i = 1; i <= pageNum; ++i) {
         let classList = ["flex", "page"];
