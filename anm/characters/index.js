@@ -52,10 +52,9 @@ import { updatePaginationOnClick, createPaginations } from "../js/common.js";
 </article>`;
       });
       // console.log(results);
-      const promiseArr = await Promise.all(results);
-      console.log(typeof promiseArr);
-      document.querySelector(".entries").innerHTML = promiseArr.join("");
-      // console.log(entriesHtml);
+      document.querySelector(".entries").innerHTML = (
+        await Promise.all(results)
+      ).join("");
       // 更新页码
       pageNum = characterRes.data.info.pages;
       document.querySelector(".pagination>nav").innerHTML = createPaginations(
