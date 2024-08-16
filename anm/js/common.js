@@ -22,8 +22,8 @@ function updatePaginationOnClick(updatePage, currentPagination) {
 function createPaginations(paginationDOM, pageNum, curPagination) {
   let pageItemHtml = `<a href="javascript:;" class="flex">&lt;</a>`;
   // 页码导航栏最多只放c1个页码（根据两位数页码宽度计算，只能少不能多，否则超出父盒子）
-  const c1 = Math.floor(paginationDOM.clientWidth / 52) - 4;
-  let paginationNum = pageNum >= c1 ? c1 : pageNum;
+  const maxPaginationNum = Math.floor(paginationDOM.clientWidth / 52) - 4;
+  let paginationNum = pageNum >= maxPaginationNum ? maxPaginationNum : pageNum;
   // 当前页码在页码导航栏中初始位置为中间
   let halfPaginationNum = paginationNum >> 1;
   let start = curPagination.value - paginationNum + halfPaginationNum + 1;
@@ -49,7 +49,10 @@ function createPaginations(paginationDOM, pageNum, curPagination) {
     pageItemHtml += `<a href="javascript:;" class="${classList.join(" ")}">${i}</a>`;
   }
   // 当前页码导航栏右边仍有未显示页码时显示右省略号
-  if (curPagination.value + halfPaginationNum < pageNum && c1 < pageNum) {
+  if (
+    curPagination.value + halfPaginationNum < pageNum &&
+    maxPaginationNum < pageNum
+  ) {
     pageItemHtml += `<a href="javascript:;" class="flex">···</a>`;
   }
   pageItemHtml += `<a href="javascript:;" class="flex">&gt;</a>`;
