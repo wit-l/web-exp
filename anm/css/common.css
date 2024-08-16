@@ -111,6 +111,10 @@ body {
   padding: 0.5rem 1rem;
 }
 
+.pagination a:not(:first-child) {
+  border-left: 1px solid white;
+}
+
 .pagination .active {
   background-color: rgb(174, 208, 238);
 }
