@@ -4,6 +4,7 @@ import { updatePaginationOnClick, createPaginations } from "../js/common.js";
   axios.defaults.baseURL = "https://rickandmortyapi.com";
   const curPagination = { value: null }; // current pagination
   const paginationDOM = document.querySelector(".pagination");
+  const entriesDOM = document.querySelector(".entries");
   let pageNum = 42; // The num of total pages
   // 仅在指定页面存在以及更换其他页面时才更新
   async function updatePage(page) {
@@ -53,9 +54,7 @@ import { updatePaginationOnClick, createPaginations } from "../js/common.js";
         </article>`;
       });
       // console.log(results);
-      document.querySelector(".entries").innerHTML = (
-        await Promise.all(results)
-      ).join("");
+      entriesDOM.innerHTML = (await Promise.all(results)).join("");
       // 更新总页数
       pageNum = characterRes.data.info.pages;
       paginationDOM.children[0].innerHTML = createPaginations(
