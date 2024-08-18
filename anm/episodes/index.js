@@ -1,4 +1,4 @@
-import { updatePaginationOnClick } from "../js/common.js";
+import { updatePaginationOnClick, createPaginations } from "../js/common.js";
 (() => {
   axios.defaults.baseURL = "https://rickandmortyapi.com";
   const curPagination = { value: null }; // current pagination
@@ -34,14 +34,11 @@ import { updatePaginationOnClick } from "../js/common.js";
         .join("");
       // 更新页码
       pageNum = res.data.info.pages;
-      let pageItemHtml = `<a href="javascript:;" class="flex">&lt;</a>`;
-      for (let i = 1; i <= pageNum; ++i) {
-        let classList = ["flex", "page"];
-        if (i === page) classList.push("active");
-        pageItemHtml += `<a href="javascript:;" class="${classList.join(" ")}">${i}</a>`;
-      }
-      pageItemHtml += `<a href="javascript:;" class="flex">&gt;</a>`;
-      document.querySelector(".pagination>nav").innerHTML = pageItemHtml;
+      document.querySelector(".pagination>nav").innerHTML = createPaginations(
+        document.querySelector(".pagination"),
+        pageNum,
+        curPagination,
+      );
     } catch (err) {
       console.log(err);
       alert(err);
