@@ -1,5 +1,5 @@
-function updatePaginationOnClick(updatePage, currentPagination) {
-  document.querySelector(".pagination>nav").addEventListener("click", (e) => {
+function updatePaginationOnClick(updatePage, currentPagination, paginationDOM) {
+  paginationDOM.children[0].addEventListener("click", (e) => {
     const target = e.target;
     let toPage = currentPagination.value;
     if (target.tagName !== "A") return;
